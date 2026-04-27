@@ -1,5 +1,10 @@
 # 🗼 The Earful Tower
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
+[![Whisper large-v3](https://img.shields.io/badge/Whisper-large--v3-green.svg)](https://github.com/openai/whisper)
+[![pyannote 3.1](https://img.shields.io/badge/pyannote-3.1-green.svg)](https://github.com/pyannote/pyannote-audio)
+
 Local audio transcription with speaker diarization. Runs entirely on your machine — no cloud, no uploads, no data shared.
 
 ## What it does
@@ -124,3 +129,5 @@ Versions are pinned in `src/requirements.txt`. Key constraints — do not change
 ## Credits
 
 Created by [Eddy](https://github.com/eddyafram) · Built with [Claude](https://claude.ai) (Anthropic)
+
+Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md) for details.

@@ -17,6 +17,7 @@ __pycache__/
 !README.md
 !_template.md
 !AGENT_PROMPT.md
+!CONTRIBUTING.md
 !src/requirements.txt
 
 # Windows shortcuts (machine-specific paths, not portable)
