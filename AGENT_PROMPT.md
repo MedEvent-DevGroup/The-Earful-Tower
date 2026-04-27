@@ -87,7 +87,7 @@ Both model terms must be accepted on huggingface.co before the token works for t
 
 ## Validation rules currently enforced
 
-- Number of speakers: integer, 2–8
+- Number of speakers: integer, 1–8
 - Speaker names: trailing commas and empty entries are stripped
 - If fewer names are provided than speakers detected, extras fall back to letters (A, B, C…)
 - Audio extension: soft warning shown for non-audio files, but ffmpeg still attempts conversion
@@ -101,5 +101,5 @@ Double-click "The Earful Tower.lnk"
 # CLI
 cd C:\Dev\audio-extraction
 .\.venv\Scripts\Activate.ps1
-python src\transcribe_3speakers.py "path\to\audio.m4a" --speakers 3 --names "Alice,Bob,Charlie" --lang fr --formats txt,srt
+python src\transcribe_3speakers.py "path\to\audio.m4a" --speakers 3 --names "Alice,Bob,Charlie" --lang fr --formats txt,srt [--initial-prompt "domain hint"] [--preview 60] [--no-timestamps] [--out-dir "C:\output"]
 ```
