@@ -1,0 +1,73 @@
+{
+  "app": {
+    "title": "🗼 The Earful Tower",
+    "subtitle": "Local transcription · Speaker diarization · Runs on your machine"
+  },
+  "settings": {
+    "header": "⚙️  Settings",
+    "audio_file": "Audio file",
+    "audio_placeholder": "C:\\path\\to\\recording.m4a",
+    "browse": "Browse",
+    "language": "Transcription language",
+    "speakers": "Number of speakers",
+    "names": "Speaker names, comma-separated — most talkative first (optional)",
+    "names_placeholder": "e.g.  Alice, Bob, Charlie",
+    "preview": "Preview mode — seconds (optional, blank = full file)",
+    "preview_placeholder": "e.g.  60",
+    "formats": "Output formats",
+    "timestamps": "Include timestamps",
+    "out_dir": "Output folder  (blank = same folder as audio)",
+    "out_dir_placeholder": "C:\\path\\to\\output",
+    "open_folder": "Open output folder when done",
+    "start_btn": "▶  Start Transcription",
+    "running": "Running…"
+  },
+  "formats": {
+    "group_text":  "📝  Text",
+    "group_video": "🎬  Subtitles & Video",
+    "group_data":  "🗄️  Data",
+    "txt":  "Transcript (.txt) — plain text, one line per speaker turn",
+    "md":   "Markdown (.md) — formatted, great for Obsidian / Notion",
+    "srt":  "Subtitles (.srt) — standard subtitle file, works in any player",
+    "mkv":  "Video (.mkv) — audio + scrolling waveform + embedded subtitles",
+    "json": "JSON (.json) — full segment data with timestamps, for developers"
+  },
+  "lang_options": {
+    "fr": "Canadian French",
+    "en": "English"
+  },
+  "progress": {
+    "header": "📊  Progress",
+    "idle": "Idle"
+  },
+  "status": {
+    "starting": "🔄  Starting…",
+    "done": "✅  Done!",
+    "failed": "❌  Failed — see log above"
+  },
+  "phases": {
+    "stage_1": "🔄  Phase 1 / 4 — Preparing audio",
+    "stage_2": "🔄  Phase 2 / 4 — Speaker diarization",
+    "stage_3": "🔄  Phase 3 / 4 — Transcription",
+    "stage_4": "✍️   Phase 4 / 4 — Writing outputs",
+    "error": "❌  Error — see log below"
+  },
+  "errors": {
+    "file_not_found": "❌  File not found — check the path",
+    "bad_ext": "⚠️  Unexpected file type '{ext}' — ffmpeg will try anyway",
+    "names_separator": "❌  Separate speaker names with commas, not semicolons",
+    "preview_nan": "❌  Preview seconds must be a whole number",
+    "no_formats": "❌  Select at least one output format"
+  },
+  "summary": {
+    "separator": "─── done ───",
+    "stats": "Segments: {segments}   Speakers: {speakers}   Duration: {duration}",
+    "files": "Output files:"
+  },
+  "browse": {
+    "audio_title": "Select audio file",
+    "audio_filter": "Audio files",
+    "all_files": "All files",
+    "outdir_title": "Select output folder"
+  }
+}

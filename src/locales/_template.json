@@ -1,0 +1,86 @@
+{
+  "_meta": {
+    "instructions": [
+      "Copy this file, rename it to your locale code (e.g. 'es.json' for Spanish).",
+      "Fill in every string value. Do not change any key names.",
+      "Preserve any {placeholder} tokens — they are replaced at runtime with data.",
+      "Emoji in values are optional but recommended for visual consistency.",
+      "Submit a pull request — your locale will be auto-discovered on next launch."
+    ],
+    "placeholders": {
+      "errors.bad_ext":   "{ext} — the unexpected file extension, e.g. .xyz",
+      "summary.stats":    "{segments} = segment count, {speakers} = speaker count, {duration} = e.g. 12m 34s"
+    }
+  },
+  "app": {
+    "title": "",
+    "subtitle": ""
+  },
+  "settings": {
+    "header": "",
+    "audio_file": "",
+    "audio_placeholder": "",
+    "browse": "",
+    "language": "",
+    "speakers": "",
+    "names": "",
+    "names_placeholder": "",
+    "preview": "",
+    "preview_placeholder": "",
+    "formats": "",
+    "timestamps": "",
+    "out_dir": "",
+    "out_dir_placeholder": "",
+    "open_folder": "",
+    "start_btn": "",
+    "running": ""
+  },
+  "formats": {
+    "group_text": "",
+    "group_video": "",
+    "group_data": "",
+    "txt": "",
+    "md": "",
+    "srt": "",
+    "mkv": "",
+    "json": ""
+  },
+  "lang_options": {
+    "fr": "",
+    "en": ""
+  },
+  "progress": {
+    "header": "",
+    "idle": ""
+  },
+  "status": {
+    "starting": "",
+    "done": "",
+    "failed": ""
+  },
+  "phases": {
+    "stage_1": "",
+    "stage_2": "",
+    "stage_3": "",
+    "stage_4": "",
+    "error": ""
+  },
+  "errors": {
+    "file_not_found": "",
+    "bad_ext": "",
+    "names_separator": "",
+    "preview_nan": "",
+    "no_formats": ""
+  },
+  "summary": {
+    "separator": "",
+    "stats": "",
+    "files": ""
+  },
+  "browse": {
+    "audio_title": "",
+    "audio_filter": "",
+    "all_files": "",
+    "outdir_title": ""
+  }
+}

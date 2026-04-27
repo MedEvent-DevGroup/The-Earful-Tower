@@ -1,0 +1,14 @@
+# Pinned for compatibility. Breaks to watch for if you ever bump these:
+#   - huggingface_hub >= 0.26 removed use_auth_token, which pyannote.audio 3.3.2 still calls
+#   - speechbrain 1.1+ has a lazy-import that collides with pytorch_lightning's inspect.stack()
+#   - matplotlib is imported eagerly by pyannote but not declared as a dep
+# Gradio dropped — its dependency on huggingface_hub>=0.33.5 conflicts with pyannote 3.3.2
+# Using CustomTkinter instead (proper desktop app, zero web-server conflicts)
+customtkinter==5.2.2
+faster-whisper==1.1.0
+pyannote.audio==3.3.2
+speechbrain==1.0.2
+huggingface_hub==0.25.2
+matplotlib>=3.7
+torch==2.4.1
+torchaudio==2.4.1

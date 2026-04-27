@@ -1,0 +1,73 @@
+{
+  "app": {
+    "title": "🗼 The Earful Tower",
+    "subtitle": "Transcription locale · Identification des locuteurs · Fonctionne sur votre machine"
+  },
+  "settings": {
+    "header": "⚙️  Paramètres",
+    "audio_file": "Fichier audio",
+    "audio_placeholder": "C:\\chemin\\vers\\enregistrement.m4a",
+    "browse": "Parcourir",
+    "language": "Langue de transcription",
+    "speakers": "Nombre de locuteurs",
+    "names": "Noms des locuteurs, séparés par des virgules — du plus au moins bavard (optionnel)",
+    "names_placeholder": "ex. :  Alice, Bob, Charlie",
+    "preview": "Mode aperçu — secondes (optionnel, vide = fichier complet)",
+    "preview_placeholder": "ex. :  60",
+    "formats": "Formats de sortie",
+    "timestamps": "Inclure les horodatages",
+    "out_dir": "Dossier de sortie  (vide = même dossier que l'audio)",
+    "out_dir_placeholder": "C:\\chemin\\vers\\sortie",
+    "open_folder": "Ouvrir le dossier de sortie quand c'est terminé",
+    "start_btn": "▶  Lancer la transcription",
+    "running": "En cours…"
+  },
+  "formats": {
+    "group_text":  "📝  Texte",
+    "group_video": "🎬  Sous-titres & Vidéo",
+    "group_data":  "🗄️  Données",
+    "txt":  "Transcription (.txt) — texte brut, une ligne par prise de parole",
+    "md":   "Markdown (.md) — formaté, idéal pour Obsidian / Notion",
+    "srt":  "Sous-titres (.srt) — format standard, compatible avec tous les lecteurs",
+    "mkv":  "Vidéo (.mkv) — audio + forme d'onde + sous-titres intégrés",
+    "json": "JSON (.json) — données complètes avec horodatages, pour développeurs"
+  },
+  "lang_options": {
+    "fr": "Français canadien",
+    "en": "Anglais"
+  },
+  "progress": {
+    "header": "📊  Progression",
+    "idle": "En attente"
+  },
+  "status": {
+    "starting": "🔄  Démarrage…",
+    "done": "✅  Terminé !",
+    "failed": "❌  Échec — voir le journal ci-dessus"
+  },
+  "phases": {
+    "stage_1": "🔄  Phase 1 / 4 — Préparation de l'audio",
+    "stage_2": "🔄  Phase 2 / 4 — Identification des locuteurs",
+    "stage_3": "🔄  Phase 3 / 4 — Transcription",
+    "stage_4": "✍️   Phase 4 / 4 — Écriture des fichiers",
+    "error": "❌  Erreur — voir le journal ci-dessous"
+  },
+  "errors": {
+    "file_not_found": "❌  Fichier introuvable — vérifiez le chemin",
+    "bad_ext": "⚠️  Type de fichier inattendu « {ext} » — ffmpeg va quand même essayer",
+    "names_separator": "❌  Séparez les noms par des virgules, pas des points-virgules",
+    "preview_nan": "❌  Le nombre de secondes doit être un nombre entier",
+    "no_formats": "❌  Sélectionnez au moins un format de sortie"
+  },
+  "summary": {
+    "separator": "─── terminé ───",
+    "stats": "Segments : {segments}   Locuteurs : {speakers}   Durée : {duration}",
+    "files": "Fichiers générés :"
+  },
+  "browse": {
+    "audio_title": "Sélectionner un fichier audio",
+    "audio_filter": "Fichiers audio",
+    "all_files": "Tous les fichiers",
+    "outdir_title": "Sélectionner le dossier de sortie"
+  }
+}

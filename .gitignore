@@ -1,0 +1,25 @@
+# credentials — never commit
+connectors/
+
+# venv
+.venv/
+
+# python cache
+__pycache__/
+*.py[cod]
+
+# generated audio/transcription files
+*.wav
+*.srt
+*.mkv
+*.txt
+*.md
+!README.md
+!_template.md
+!AGENT_PROMPT.md
+!src/requirements.txt
+
+# Windows shortcuts (machine-specific paths, not portable)
+*.lnk
+
+# icon source (keep the .ico, not the generator output)
