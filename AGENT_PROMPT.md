@@ -103,3 +103,50 @@ cd C:\Dev\audio-extraction
 .\.venv\Scripts\Activate.ps1
 python src\transcribe_3speakers.py "path\to\audio.m4a" --speakers 3 --names "Alice,Bob,Charlie" --lang fr --formats txt,srt [--initial-prompt "domain hint"] [--preview 60] [--no-timestamps] [--out-dir "C:\output"]
 ```
+
+## Wiki
+
+The project has a GitHub Wiki with user-facing documentation. It is a **separate git repository** from the main code.
+
+- **Live URL**: https://github.com/MedEvent-DevGroup/The-Earful-Tower/wiki
+- **Local clone**: `C:\Dev\earful-wiki\`
+- **Remote**: `https://github.com/MedEvent-DevGroup/The-Earful-Tower.wiki.git`
+- **Default branch**: `master`
+
+### Pages
+
+| File | Wiki page | Contents |
+|---|---|---|
+| `Home.md` | Home | Overview, page index, quick links |
+| `Installation.md` | Installation | Prerequisites, download, setup steps |
+| `Usage-Guide.md` | Usage Guide | Every UI control explained |
+| `CLI-Reference.md` | CLI Reference | All flags, examples, exit codes |
+| `Adding-a-Language.md` | Adding a Language | Locale contributor guide |
+| `Troubleshooting.md` | Troubleshooting | Common errors and fixes |
+| `Dependency-Notes.md` | Dependency Notes | Pinned versions and why |
+| `Privacy-and-Security.md` | Privacy and Security | What data goes where |
+| `_Sidebar.md` | *(sidebar)* | Navigation shown on every page |
+
+### When to update the wiki
+
+Update the relevant wiki page(s) whenever you make these types of changes to the main repo:
+
+| Change | Update |
+|---|---|
+| New CLI flag or changed default | `CLI-Reference.md` |
+| New output format or UI option | `Usage-Guide.md` + `CLI-Reference.md` |
+| New or changed prerequisite | `Installation.md` |
+| Dependency version change | `Dependency-Notes.md` |
+| New known error or fix | `Troubleshooting.md` |
+| Privacy-relevant network behaviour | `Privacy-and-Security.md` |
+| New language added | `Adding-a-Language.md` (if process changes) |
+
+### How to update
+
+```powershell
+cd C:\Dev\earful-wiki
+# edit the relevant .md file(s)
+git add <file>
+git commit -m "docs: describe what changed"
+git push origin master
+```

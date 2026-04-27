@@ -4,8 +4,11 @@
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Whisper large-v3](https://img.shields.io/badge/Whisper-large--v3-green.svg)](https://github.com/openai/whisper)
 [![pyannote 3.1](https://img.shields.io/badge/pyannote-3.1-green.svg)](https://github.com/pyannote/pyannote-audio)
+[![Wiki](https://img.shields.io/badge/docs-wiki-blue.svg)](https://github.com/MedEvent-DevGroup/The-Earful-Tower/wiki)
 
 Local audio transcription with speaker diarization. Runs entirely on your machine — no cloud, no uploads, no data shared.
+
+📖 **[Full documentation on the Wiki](https://github.com/MedEvent-DevGroup/The-Earful-Tower/wiki)** — Installation, Usage Guide, CLI Reference, Troubleshooting, and more.
 
 ## What it does
 
