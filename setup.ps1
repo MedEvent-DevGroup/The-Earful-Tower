@@ -17,6 +17,20 @@ Write-Host ""
 Write-Host "  🗼  The Earful Tower — Setup" -ForegroundColor White
 Write-Host "  ─────────────────────────────────────────────────" -ForegroundColor DarkGray
 Write-Host ""
+Write-Host "  Before this script runs, please note:" -ForegroundColor Yellow
+Write-Host ""
+Write-Host "  This script will download and install approximately 5.8 GB:" -ForegroundColor White
+Write-Host "    • PyTorch + dependencies  ~2.5 GB  (installed now)" -ForegroundColor Gray
+Write-Host "    • Whisper large-v3 model  ~3.0 GB  (downloaded on first launch)" -ForegroundColor Gray
+Write-Host "    • pyannote models          ~300 MB  (downloaded on first launch)" -ForegroundColor Gray
+Write-Host ""
+Write-Host "  Total disk space required: ~8.5 GB" -ForegroundColor White
+Write-Host "  Estimated setup time:      5–20 minutes" -ForegroundColor White
+Write-Host "  Internet connection:       required for setup + first launch only" -ForegroundColor White
+Write-Host ""
+$confirm = Read-Host "  Continue? (Y/N)"
+if ($confirm -notmatch "^[Yy]") { Write-Host "  Cancelled."; exit 0 }
+Write-Host ""
 
 # ── 1. Find Python 3.11 ──────────────────────────────────────────────────────
 Write-Step "Looking for Python 3.11..."

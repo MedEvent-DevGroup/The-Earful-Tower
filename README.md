@@ -16,14 +16,42 @@ Local audio transcription with speaker diarization. Runs entirely on your machin
 - GPU-accelerated on CUDA; falls back to CPU automatically
 - Multilingual UI — currently English and French Canadian (add your language by dropping a JSON file in `src/locales/`)
 
+## Platform
+
+**Windows 10/11 only.** The setup script is PowerShell and the GUI uses Windows-specific features. macOS and Linux are not currently supported.
+
+## Before you download — size and time expectations
+
+This app is powerful but heavy. Please read before starting:
+
+| Step | What happens | Download | Disk space | Time (estimate) |
+|---|---|---|---|---|
+| `setup.ps1` | Installs Python packages incl. PyTorch CUDA | ~2.5 GB | ~5 GB | 5–20 min |
+| First launch | Downloads Whisper large-v3 + pyannote models | ~3.3 GB | ~3.3 GB | 5–15 min |
+| **Total** | | **~5.8 GB** | **~8.5 GB** | **~30 min** |
+
+After the first launch everything is cached locally. All subsequent runs are **fully offline** and start in seconds.
+
+**GPU strongly recommended.** An NVIDIA GPU (CUDA 12.1) is required for reasonable speed:
+
+| Hardware | 90-minute audio |
+|---|---|
+| RTX 4090 | ~20–35 min |
+| RTX 3060 / 3070 | ~45–75 min |
+| CPU only | 3–6 hours |
+
 ## Requirements
 
-- Windows 10/11 (tested), macOS/Linux may work with minor path tweaks
-- Python 3.11
-- NVIDIA GPU strongly recommended (CUDA 12.1); CPU works but is much slower
-- [ffmpeg](https://ffmpeg.org) on your system PATH
+- Windows 10/11
+- Python 3.11 — [download here](https://www.python.org/downloads/releases/python-3119/)
+- NVIDIA GPU with CUDA 12.1 drivers (CPU works but see speed table above)
+- [ffmpeg](https://ffmpeg.org/download.html) on your system PATH
+- ~9 GB free disk space
+- A free [HuggingFace](https://huggingface.co) account (for model downloads)
 
-## First-time setup
+## First-time setup (manual / developer path)
+
+> **End users:** use `setup.ps1` instead — it does all of this for you. See the [latest release](https://github.com/MedEvent-DevGroup/The-Earful-Tower/releases/latest).
 
 **1. Clone and create the virtual environment**
 ```powershell
