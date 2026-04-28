@@ -26,4 +26,7 @@ __pycache__/
 # crash log written by app.py on silent failures
 crash.log
 
+# Claude Code local agent state (per-machine settings, hooks, worktrees)
+.claude/
+
 # icon source (keep the .ico, not the generator output)

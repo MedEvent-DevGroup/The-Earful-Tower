@@ -4,6 +4,18 @@
 #   - matplotlib is imported eagerly by pyannote but not declared as a dep
 # Gradio dropped — its dependency on huggingface_hub>=0.33.5 conflicts with pyannote 3.3.2
 # Using CustomTkinter instead (proper desktop app, zero web-server conflicts)
+#
+# torch held at 2.4.1 despite Dependabot alerts (GHSA-3749-ghw9-m3mg, GHSA-887c-mr87-cxwp,
+# GHSA-53q9-r3pm-6pq6). torch 2.6+ flipped torch.load(weights_only=True) by default, which
+# breaks pyannote.audio 3.3.2 model loading (omegaconf.ListConfig not in safe-globals
+# allowlist) and speechbrain 1.0.2 checkpoint loading. Bumping to 2.8 requires either a
+# safe-globals shim or upgrading pyannote to 4.x (API changes).
+# Reachability: this is a local desktop app. The two DoS alerts (mkldnn_max_pool2d,
+# ctc_loss) are local-only and need crafted tensors not reachable from the audio pipeline.
+# The RCE alert requires loading an attacker-controlled checkpoint via torch.load — we
+# only load pyannote/speechbrain models from HuggingFace (trusted) and faster-whisper
+# uses CTranslate2, not torch.load. Revisit if/when we either touch the audio stack for
+# other reasons or accept untrusted model files.
 customtkinter==5.2.2
 faster-whisper==1.1.0
 pyannote.audio==3.3.2
