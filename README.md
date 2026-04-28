@@ -303,6 +303,7 @@ Versions are pinned in `src/requirements.txt`. Key constraints — do not change
 |---|---|---|
 | `huggingface_hub` | `0.25.2` | ≥ 0.26 removed `use_auth_token` kwarg that pyannote still uses internally |
 | `speechbrain` | `1.0.2` | 1.1+ has a lazy-import that conflicts with `pytorch_lightning` |
+| `torch` / `torchaudio` | `2.4.1` | 2.6+ flipped `torch.load(weights_only=True)` default, breaking pyannote 3.3.2 and speechbrain 1.0.2 checkpoint loading. Open Dependabot alerts dismissed as not-reachable — see [Dependency Notes](https://github.com/MedEvent-DevGroup/The-Earful-Tower/wiki/Dependency-Notes#pytorch) |
 | `gradio` | not used | requires `huggingface_hub ≥ 0.33.5` — incompatible with pyannote pin |
 
 ---

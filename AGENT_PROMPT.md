@@ -67,6 +67,7 @@ C:\Dev\audio-extraction\
 
 - **`huggingface_hub` must stay at `0.25.2`** — versions ≥ 0.26 removed the `use_auth_token` kwarg that pyannote.audio 3.3.2 still uses internally. Upgrading breaks diarization.
 - **`speechbrain` must stay at `1.0.2`** — version 1.1+ has a lazy-import that collides with `pytorch_lightning`'s `inspect.stack()` call, crashing on pipeline load.
+- **`torch` / `torchaudio` must stay at `2.4.1`** — torch 2.6+ flipped `torch.load(weights_only=True)` to default-on, which breaks `pyannote.audio 3.3.2` (`omegaconf.ListConfig` not in safe-globals allowlist) and `speechbrain 1.0.2` checkpoint loading. There are open Dependabot alerts on torch (GHSA-3749-ghw9-m3mg, GHSA-887c-mr87-cxwp, GHSA-53q9-r3pm-6pq6) — they are dismissed as `tolerable_risk` because the DoS paths need crafted tensors not reachable from the audio pipeline and the RCE path needs an attacker-controlled checkpoint we never load (we only pull from the `pyannote` and `speechbrain` HuggingFace orgs; faster-whisper uses CTranslate2, not `torch.load`). Re-evaluate when bumping pyannote to 4.x or adding any user-supplied model path.
 - **Do not add Gradio** — its dependency on `huggingface_hub >= 0.33.5` is incompatible with the above constraint. CustomTkinter was chosen specifically to avoid this conflict.
 
 ## HuggingFace token
