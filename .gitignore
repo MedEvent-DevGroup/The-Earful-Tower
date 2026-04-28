@@ -23,4 +23,7 @@ __pycache__/
 # Windows shortcuts (machine-specific paths, not portable)
 *.lnk
 
+# crash log written by app.py on silent failures
+crash.log
+
 # icon source (keep the .ico, not the generator output)

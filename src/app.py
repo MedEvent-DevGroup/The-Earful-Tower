@@ -659,5 +659,14 @@ class App(ctk.CTk):
 
 
 if __name__ == "__main__":
-    app = App()
-    app.mainloop()
+    import traceback, datetime
+    try:
+        app = App()
+        app.mainloop()
+    except Exception:                          # noqa: BLE001
+        log_path = Path(__file__).parent.parent / "crash.log"
+        with open(log_path, "a", encoding="utf-8") as f:
+            f.write(f"\n{'='*60}\n{datetime.datetime.now()}\n")
+            traceback.print_exc(file=f)
+        # Re-raise so a console run still shows the traceback
+        raise
