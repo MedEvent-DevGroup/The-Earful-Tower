@@ -141,7 +141,7 @@ class _AutoHideScrollFrame(ctk.CTkScrollableFrame):
     def __init__(self, master, **kw) -> None:
         super().__init__(master, **kw)
         # Override the canvas yscrollcommand so we can show/hide the bar
-        self._canvas.configure(yscrollcommand=self._auto_scroll_set)
+        self._parent_canvas.configure(yscrollcommand=self._auto_scroll_set)
 
     def _auto_scroll_set(self, lo: str, hi: str) -> None:
         if float(lo) <= 0.0 and float(hi) >= 1.0:
