@@ -132,13 +132,20 @@ $token
     }
 }
 
-# ── 6. Desktop shortcut ───────────────────────────────────────────────────────
+# ── 6. Named launcher exe (shows as "earful-tower" in Task Manager) ──────────
+Write-Step "Creating named launcher executable..."
+$venvPythonW  = Join-Path $venvDir "Scripts\pythonw.exe"
+$venvLauncher = Join-Path $venvDir "Scripts\earful-tower.exe"
+Copy-Item $venvPythonW $venvLauncher -Force
+Write-Ok "Launcher created: earful-tower.exe"
+
+# ── 7. Desktop shortcut ───────────────────────────────────────────────────────
 Write-Step "Creating desktop shortcut..."
 $desktop      = [Environment]::GetFolderPath("Desktop")
 $shortcutPath = Join-Path $desktop "The Earful Tower.lnk"
 $shell        = New-Object -ComObject WScript.Shell
 $sc           = $shell.CreateShortcut($shortcutPath)
-$sc.TargetPath       = $venvPython
+$sc.TargetPath       = $venvLauncher
 $sc.Arguments        = "src\app.py"
 $sc.WorkingDirectory = $ProjectDir
 $sc.IconLocation     = Join-Path $ProjectDir "icon.ico"
