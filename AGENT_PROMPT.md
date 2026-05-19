@@ -14,7 +14,7 @@ All files are at `C:\Dev\audio-extraction\` on my Windows machine (Alienware Aur
 
 The Earful Tower is a local audio transcription app with speaker diarization. It:
 - Takes an audio file (m4a, mp3, wav, etc.) as input
-- Detects and separates speakers using **pyannote.audio 3.1**
+- Detects and separates speakers using **pyannote.audio 3.3.2** (speaker-diarization-3.1 model)
 - Transcribes speech using **faster-whisper large-v3**
 - Outputs a timestamped transcript (`.txt`), markdown (`.md`), subtitles (`.srt`), and/or a waveform video with subtitles (`.mkv`)
 - Supports Canadian French and English

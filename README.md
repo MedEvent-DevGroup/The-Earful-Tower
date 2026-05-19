@@ -13,7 +13,7 @@ Local audio transcription with speaker diarization. Runs entirely on your machin
 ## What it does
 
 - Converts any audio file to a clean transcript with speaker labels
-- Detects and separates speakers automatically using **pyannote.audio 3.1**
+- Detects and separates speakers automatically using **pyannote.audio 3.3.2** (speaker-diarization-3.1 model)
 - Transcribes in **Canadian French** or **English** using **Whisper large-v3**
 - Outputs: timestamped `.txt`, `.md`, `.srt`, or a waveform `.mkv` video with embedded subtitles
 - GPU-accelerated on CUDA; falls back to CPU automatically
