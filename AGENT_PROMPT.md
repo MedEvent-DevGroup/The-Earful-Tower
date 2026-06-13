@@ -56,7 +56,7 @@ C:\Dev\audio-extraction\
 | Library | Version | Role |
 |---|---|---|
 | customtkinter | 5.2.2 | Desktop GUI |
-| faster-whisper | 1.1.0 | Transcription (CTranslate2 backend) |
+| faster-whisper | 1.2.1 | Transcription (CTranslate2 backend) |
 | pyannote.audio | 3.3.2 | Speaker diarization |
 | speechbrain | 1.0.2 | pyannote dependency |
 | huggingface_hub | 0.25.2 | Model downloads |
