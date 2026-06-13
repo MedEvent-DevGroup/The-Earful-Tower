@@ -23,7 +23,7 @@
 #                      torch 2.9+/2.10+, which crosses the 2.6 weights_only break above.
 # Revisit if/when we touch the audio stack for other reasons or accept untrusted models.
 customtkinter==5.2.2
-faster-whisper==1.1.0
+faster-whisper==1.2.1
 pyannote.audio==3.3.2
 speechbrain==1.0.2
 huggingface_hub==0.25.2
