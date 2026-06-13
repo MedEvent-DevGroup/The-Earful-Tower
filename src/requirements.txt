@@ -5,17 +5,23 @@
 # Gradio dropped — its dependency on huggingface_hub>=0.33.5 conflicts with pyannote 3.3.2
 # Using CustomTkinter instead (proper desktop app, zero web-server conflicts)
 #
-# torch held at 2.4.1 despite Dependabot alerts (GHSA-3749-ghw9-m3mg, GHSA-887c-mr87-cxwp,
-# GHSA-53q9-r3pm-6pq6). torch 2.6+ flipped torch.load(weights_only=True) by default, which
-# breaks pyannote.audio 3.3.2 model loading (omegaconf.ListConfig not in safe-globals
-# allowlist) and speechbrain 1.0.2 checkpoint loading. Bumping to 2.8 requires either a
-# safe-globals shim or upgrading pyannote to 4.x (API changes).
-# Reachability: this is a local desktop app. The two DoS alerts (mkldnn_max_pool2d,
-# ctc_loss) are local-only and need crafted tensors not reachable from the audio pipeline.
-# The RCE alert requires loading an attacker-controlled checkpoint via torch.load — we
-# only load pyannote/speechbrain models from HuggingFace (trusted) and faster-whisper
-# uses CTranslate2, not torch.load. Revisit if/when we either touch the audio stack for
-# other reasons or accept untrusted model files.
+# torch held at 2.4.1 despite Dependabot alerts. torch 2.6+ flipped
+# torch.load(weights_only=True) by default, which breaks pyannote.audio 3.3.2 model
+# loading (omegaconf.ListConfig not in safe-globals allowlist) and speechbrain 1.0.2
+# checkpoint loading. Bumping to 2.8+ requires either a safe-globals shim or upgrading
+# pyannote to 4.x (API changes).
+# Reachability: this is a local desktop app that loads only trusted HuggingFace models
+# (faster-whisper uses CTranslate2, not torch.load). The app calls none of the flagged
+# torch APIs (verified via grep — no torch.load/jit.script/etc. in src/). All alerts are
+# crafted-tensor memory-corruption or local-DoS, not reachable from the audio pipeline;
+# the RCE alert needs an attacker-controlled checkpoint we never load.
+# Alerts reviewed & dismissed on GitHub (reason: not_used):
+#   Earlier dismissals: GHSA-3749-ghw9-m3mg, GHSA-887c-mr87-cxwp, GHSA-53q9-r3pm-6pq6
+#   2026-06-13 batch:  GHSA-c678-jfcj-6jmf, GHSA-f4hp-rmr7-r7v8, GHSA-x3gm-94wq-g975,
+#                      GHSA-vgrw-7cvw-pwgx (fix 2.9.1), GHSA-qfhq-4f3w-5fph (fix 2.10.0),
+#                      GHSA-rrmf-rvhw-rf47 (no fix). The two with fixes still require
+#                      torch 2.9+/2.10+, which crosses the 2.6 weights_only break above.
+# Revisit if/when we touch the audio stack for other reasons or accept untrusted models.
 customtkinter==5.2.2
 faster-whisper==1.1.0
 pyannote.audio==3.3.2
